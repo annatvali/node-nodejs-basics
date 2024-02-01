@@ -12,11 +12,10 @@ const create = async () => {
   } catch (err) {
     if (err.code === 'ENOENT') {
       await fs.writeFile(newFile, 'I am fresh and young');
-      console.log('File successfully created and written to');
     } else {
       throw err;
     }
   }
 };
 
-await create().catch((error) => console.error(error));
+await create();
